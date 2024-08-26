@@ -1,18 +1,23 @@
 import Form from "./Form";
 import axios from "axios";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function Table() {
 	const [data, setData] = useState([]);
 
-	axios
+	useEffect(() => {
+		axios
 		.get("http://localhost:3000/usuario")
 		.then((res) => {
 			setData(res.data);
+			console.log(data)
 		})
 		.catch((error) => {
 			console.log(error);
 		});
+	},[])
+	
 
 	return (
 		<table>

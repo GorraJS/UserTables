@@ -8,25 +8,25 @@ function Form() {
 	const [edad, setEdad] = useState("");
 	const [tel, setTel] = useState("");
 
-	const handleChangeName = (a) => {
-		a.preventDefault();
-		setFname(a.target.value);
+	const handleChangeName = (e) => {
+		e.preventDefault();
+		setFname(e.target.value);
 	};
 	const handleChangeLname = (e) => {
 		e.preventDefault();
 		setLname(e.target.value);
 	};
-	const handleChangeEdad = (i) => {
-		i.preventDefault();
-		setEdad(i.target.value);
+	const handleChangeEdad = (e) => {
+		e.preventDefault();
+		setEdad(e.target.value);
 	};
-	const handleChangeTel = (o) => {
-		o.preventDefault();
-		setTel(o.target.value);
+	const handleChangeTel = (e) => {
+		e.preventDefault();
+		setTel(e.target.value);
 	};
 
-	const handleClickSubmit = (u) => {
-		u.preventDefault();
+	const handleClickSubmit = (e) => {
+		e.preventDefault();
 		axios.post("http://localhost:3000/usuario", {
 				nombre: fname,
 				apellido: lname,
