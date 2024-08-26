@@ -1,4 +1,6 @@
 import { useState } from "react";
+import toast from "solid-toast";
+import axios from "axios";
 
 function Form() {
 	const [fname, setFname] = useState("");
@@ -6,25 +8,34 @@ function Form() {
 	const [edad, setEdad] = useState("");
 	const [tel, setTel] = useState("");
 
-	const handleChangeName = (e) => {
-		e.preventDefault();
-		setFname(e.target.value);
+	const handleChangeName = (a) => {
+		a.preventDefault();
+		setFname(a.target.value);
 	};
 	const handleChangeLname = (e) => {
 		e.preventDefault();
-		setFname(e.target.value);
+		setLname(e.target.value);
 	};
-	const handleChangeEdad = (e) => {
-		e.preventDefault();
-		setFname(e.target.value);
+	const handleChangeEdad = (i) => {
+		i.preventDefault();
+		setEdad(i.target.value);
 	};
-	const handleChangeTel = (e) => {
-		e.preventDefault();
-		setFname(e.target.value);
+	const handleChangeTel = (o) => {
+		o.preventDefault();
+		setTel(o.target.value);
 	};
 
-	const handleClickSubmit = (e) => {
-		e.preventDefault();
+	const handleClickSubmit = (u) => {
+		u.preventDefault();
+		axios.post("http://localhost:3000/usuario", {
+				nombre: fname,
+				apellido: lname,
+				edad: edad,
+				telefono: tel,
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 	};
 
 	return (
@@ -52,7 +63,7 @@ function Form() {
 					/>
 				</label>
 			</fieldset>
-			<fieldset class="grid">
+			<fieldset className="grid">
 				<input
 					name="edad"
 					placeholder="Edad"
@@ -72,7 +83,7 @@ function Form() {
 				/>
 				<input
 					type="submit"
-					value="enviar"
+					value="ENVIAR"
 					onClick={handleClickSubmit}
 				/>
 			</fieldset>

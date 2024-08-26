@@ -1,5 +1,4 @@
 {
-    "usuario": [
-        {"nombre": "Julio", "apellido": "Gorra", "edad":20, "telefono": 3513151345}
-    ]
+  "usuario": [
+  ]
 }
