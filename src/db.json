@@ -1,4 +1,25 @@
 {
   "usuario": [
+    {
+      "id": "0a77",
+      "nombre": "Nicolas",
+      "apellido": "Stasyszyn",
+      "edad": "16",
+      "telefono": "3513153728"
+    },
+    {
+      "id": "248e",
+      "nombre": "Julio",
+      "apellido": "Bravo",
+      "edad": "17",
+      "telefono": "312312313"
+    },
+    {
+      "id": "8c0b",
+      "nombre": "Agustin",
+      "apellido": "Mancini",
+      "edad": "16",
+      "telefono": "4323424323"
+    }
   ]
 }

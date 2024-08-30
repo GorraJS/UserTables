@@ -46,7 +46,7 @@ function Form() {
 					<input
 						name="name"
 						placeholder="Nombre"
-						autocomplete="given-name"
+						autoComplete="given-name"
 						value={fname}
 						onChange={handleChangeName}
 					/>
@@ -57,7 +57,7 @@ function Form() {
 						type="apellido"
 						name="apellido"
 						placeholder="Apellido"
-						autocomplete="apellido"
+						autoComplete="apellido"
 						value={lname}
 						onChange={handleChangeLname}
 					/>
@@ -68,7 +68,7 @@ function Form() {
 					name="edad"
 					placeholder="Edad"
 					aria-label="edad"
-					autocomplete="username"
+					autoComplete="username"
 					value={edad}
 					onChange={handleChangeEdad}
 				/>
@@ -77,7 +77,7 @@ function Form() {
 					name="Telefono"
 					placeholder="Telefono"
 					aria-label="Telefono"
-					autocomplete="current-telefono"
+					autoComplete="current-telefono"
 					value={tel}
 					onChange={handleChangeTel}
 				/>

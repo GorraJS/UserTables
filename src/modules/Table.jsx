@@ -1,23 +1,10 @@
-import Form from "./Form";
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
 
-function Table() {
-	const [data, setData] = useState([]);
+function Table({prop}) {
 
-	useEffect(() => {
-		axios
-		.get("http://localhost:3000/usuario")
-		.then((res) => {
-			setData(res.data);
-			console.log(data)
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-	},[])
-	
+	const Delete = (index) => {
+		axios.delete(`http://localhost:3000/usuario/${index}`)
+	}
 
 	return (
 		<table>
@@ -27,26 +14,19 @@ function Table() {
 					<th scope="col">Apellido</th>
 					<th scope="col">Edad</th>
 					<th scope="col">Telefono</th>
-					<th scope="col">[ X ]</th>
+					<th scope="col">ELIMINAR</th>
 				</tr>
 			</thead>
 			<tbody>
-				{data.map((elem) => {
-					<tr>
-						<th scope="row">
-							<td>{elem.nombre}</td>
-						</th>
-						<th scope="row">
-							<td>{elem.apellido}</td>
-						</th>
-						<th scope="row">
-							<td>{elem.edad}</td>
-						</th>
-						<th scope="row">
-							<td>{elem.telefono}</td>
-						</th>
-					</tr>;
-				})}
+				{prop.map((elem,index) => (
+					<tr key={elem.id}>
+						<td>{elem.nombre}</td>
+						<td>{elem.apellido}</td>
+						<td>{elem.edad}</td>
+						<td>{elem.telefono}</td>
+						<td><input type="submit" value="-" onClick={Delete(index)}/></td>
+					</tr>
+				))}
 			</tbody>
 		</table>
 	);
